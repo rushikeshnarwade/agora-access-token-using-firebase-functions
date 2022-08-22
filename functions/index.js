@@ -45,5 +45,5 @@ exports.videoToken = functions.region("asia-south1")
       await db.collection("users").doc(context.auth.uid)
           .update({user_token: userToken});
 
-      return {error: "Please select date within next 7 days"};
+      return {token: userToken};
     });
